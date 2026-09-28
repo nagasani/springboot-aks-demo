@@ -13,9 +13,9 @@ jobs:
   tests-and-quality:
     runs-on: ubuntu-latest
     env:
-      SONAR_TOKEN: ${{ d0cd1a314db4fc487ce227295c38c5a87d951713 }}
-      SONAR_ORG: ${{ nagasani }}
-      SONAR_PROJECT_KEY: ${{ TEST }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      SONAR_ORG: ${{ vars.SONAR_ORGANIZATION }}
+      SONAR_PROJECT_KEY: ${{ vars.SONAR_PROJECT_KEY }}
     steps:
       - name: Checkout full Git history
         uses: actions/checkout@v4
